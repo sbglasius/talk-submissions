@@ -4,7 +4,7 @@
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
-  <head>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><g:layoutTitle default="Grails"/></title>
@@ -13,23 +13,37 @@
     <link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
     <link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
     <link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
+    %{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">--}%
+    %{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">--}%
+    <r:require modules="bootstrap"/>
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+    <style>
+    body {
+        min-height: 2000px;
+    }
+
+    .navbar-static-top {
+        margin-bottom: 19px;
+    }
+    </style>
     <g:layoutHead/>
     <r:layoutResources/>
-  </head>
-  <body>
-    <div id="logo" role="banner">
-        Groovy &amp; Grails Exchange 2013
-    </div>
-    <sec:ifLoggedIn>
-    <div id="profileBox">
-      <g:include controller="profile" action="loggedIn"/>
-    </div>
-    </sec:ifLoggedIn>
+</head>
+
+<body>
+<tmpl:/layouts/menu/>
+
+<div class="container">
+
     <g:layoutBody/>
-    <div class="footer" role="contentinfo"><a href="http://skillsmatter.com/event/groovy-grails/groovy-grails-exchange-2013">Event site</a></div>
+    <div class="footer" role="contentinfo"><a
+            href="http://skillsmatter.com/event/groovy-grails/groovy-grails-exchange-2013">Event site</a></div>
+
     <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
-    <r:layoutResources/>
-  </body>
+</div>
+<r:layoutResources/>
+</body>
 </html>

@@ -39,7 +39,7 @@ class SubmissionController {
             submissionCount = Submission.countByUserAndYear(springSecurityService.currentUser, year)
         }
 
-        def deadline = new GregorianCalendar(2013, 8, 7)
+        def deadline = new GregorianCalendar(2013, 12, 31)
         deadline.timeZone = TimeZone.getTimeZone("UTC")
 
         [submissionInstanceList: submissions,

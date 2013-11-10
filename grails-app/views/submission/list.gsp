@@ -1,4 +1,4 @@
-<!doctype html>
+    <!doctype html>
 <html>
   <head>
     <meta name="layout" content="main">
@@ -12,12 +12,8 @@
     <title>${pageTitle}</title>
   </head>
   <body>
-    <a href="#list-submission" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
     <div class="nav" role="navigation">
       <ul>
-        <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-        <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-        <li><g:link action="schedule">Schedule</g:link></li>
         <sec:ifAllGranted roles="ROLE_ADMIN">
           <li><g:link controller="profile" action="acceptedExpenses" params="[forYear: 2012]">Expenses</g:link></li>
           <li><g:link controller="profile" action="acceptedEmails" params="[forYear: 2012]">Accepted Email Addresses</g:link></li>
@@ -34,7 +30,7 @@
       <g:if test="${flash.message}">
       <div class="message" role="status">${flash.message}</div>
       </g:if>
-      <table>
+      <table class="table table-bordered">
         <thead>
           <tr>
           

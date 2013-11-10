@@ -30,17 +30,19 @@ grails.project.dependency.resolution = {
         }
 
         compile ":hibernate:$grailsVersion",
+                ":fields:1.3",
                 ":spring-security-core:1.2.7.3",
                 ":spring-security-oauth:2.0.2",
                 ":spring-security-openid:1.0.4", {
             excludes "guice", "spock", "spock-grails-support"
         }
 
-        runtime ":resources:1.2",
-                ":jquery:1.8.0",
+        runtime ":resources:1.2.1",
+                ":jquery:1.10.2",
+                ":twitter-bootstrap:3.0.2",
 //                ":cloud-foundry:1.2.3",
-                ":database-migration:1.1",
-                ":markdown:1.0.0.RC1",
+                ":database-migration:1.3.8",
+                ":markdown:1.1.1",
                 ":modernizr:2.6.2",
                 ":webxml:1.4.1"
 

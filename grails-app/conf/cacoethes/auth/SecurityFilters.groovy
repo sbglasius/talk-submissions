@@ -33,6 +33,7 @@ class SecurityFilters {
                 }
             }
             after = { Map model ->
+
                 if (model && !model.currentUser) {
                     model.currentUser = springSecurityService.currentUser
                 }
